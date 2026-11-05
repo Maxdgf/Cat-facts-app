@@ -9,13 +9,9 @@ class ClipboardManager(context: Context) {
         context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager // get clipboard manager
 
     /** Sets text to clipboard.
-     * @param text text string.
-     * @param label clipboard item label. */
-    fun setTextToClipboard(
-        text: String,
-        label: String = "Copied cat fact",
-    ) {
-        val clipData = ClipData.newPlainText(label, text) // new clip data
+     * @param text text string */
+    fun setTextToClipboard(text: String) {
+        val clipData = ClipData.newPlainText("Copied cat fact.", text) // new clip data
         _clipboard.setPrimaryClip(clipData) // set clip data
     }
 }
