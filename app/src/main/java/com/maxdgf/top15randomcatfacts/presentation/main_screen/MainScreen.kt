@@ -43,8 +43,8 @@ import androidx.compose.ui.unit.sp
 import org.koin.androidx.compose.koinViewModel
 
 import com.maxdgf.top15randomcatfacts.R
-import com.maxdgf.top15randomcatfacts.presentation.main_screen.component.FactItem
-import com.maxdgf.top15randomcatfacts.presentation.main_screen.component.LanguageItem
+import com.maxdgf.top15randomcatfacts.presentation.main_screen.component.FactCard
+import com.maxdgf.top15randomcatfacts.presentation.main_screen.component.LanguageCard
 import com.maxdgf.top15randomcatfacts.presentation.main_screen.utils.ClipboardManager
 import com.maxdgf.top15randomcatfacts.presentation.main_screen.utils.ShareManager
 
@@ -132,7 +132,7 @@ fun MainScreen() {
                                         verticalArrangement = Arrangement.spacedBy(10.dp)
                                     ) {
                                         itemsIndexed(items = options) { index, language ->
-                                            LanguageItem(
+                                            LanguageCard(
                                                 name = language.first,
                                                 isSelected = selectedLanguageCode == language.second,
                                                 isElevated = (index + 1) % 2 == 0,
@@ -178,7 +178,7 @@ fun MainScreen() {
                         ) { index, fact ->
                             val number = index + 1
 
-                            FactItem(
+                            FactCard(
                                 number = number,
                                 fact = fact,
                                 isElevated = number % 2 == 0,

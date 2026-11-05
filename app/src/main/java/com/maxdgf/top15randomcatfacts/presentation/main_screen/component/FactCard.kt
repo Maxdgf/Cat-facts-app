@@ -25,7 +25,7 @@ import com.maxdgf.top15randomcatfacts.R
  * @param onClick will be called when user clicks on fact card
  * @param onShare will be called when user clicks on share button on fact card */
 @Composable
-fun FactItem(
+fun FactCard(
     number: Int,
     fact: String,
     isElevated: Boolean,

@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.dp
  * @param isElevated whether the card should be elevated
  * @param onClick will be called when user clicks on language card */
 @Composable
-fun LanguageItem(
+fun LanguageCard(
     name: String,
     isSelected: Boolean,
     isElevated: Boolean,
