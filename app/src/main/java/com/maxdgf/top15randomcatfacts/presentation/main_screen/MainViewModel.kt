@@ -34,14 +34,15 @@ class MainViewModel(
     private val _allCatFacts = MutableStateFlow<CatFactsResult>(CatFactsResult.Initial)
     val allCatFacts = _allCatFacts.asStateFlow()
 
-    init { loadCatFacts() }
+    init { loadCatFacts() } // load cat facts initially
 
+    /** Loads cat facts list. */
     fun loadCatFacts() = viewModelScope.launch(Dispatchers.IO) {
         try {
             _isRefreshing.update { true }
 
-            val languageCode = selectedLanguageSource.getSelectedLanguageCode().first()
-            val facts = catFactsRepository.getRandomCatsFacts(languageCode)
+            val languageCode = selectedLanguageSource.getSelectedLanguageCode().first() // get current selected language code
+            val facts = catFactsRepository.getRandomCatsFacts(languageCode) // load cat facts by selected language code
 
             _allCatFacts.update { CatFactsResult.Content(facts.data) }
         } catch (e: Exception) {
@@ -51,6 +52,7 @@ class MainViewModel(
         }
     }
 
+    /** Selects facts language by code. */
     fun selectLanguage(code: String) = viewModelScope.launch(Dispatchers.IO) {
         selectedLanguageSource.saveSelectedLanguageCode(code)
     }

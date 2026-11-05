@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.lazy.LazyItemScope
+import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -17,6 +19,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.maxdgf.top15randomcatfacts.R
 
+/** Creates card for displaying some cat fact.
+ *
+ * @param number card's order number
+ * @param fact cat fact string
+ * @param isElevated whether the card should be elevated
+ * @param onClick will be called when user clicks on fact card
+ * @param onShare will be called when user clicks on share button on fact card */
 @Composable
 fun FactItem(
     number: Int,

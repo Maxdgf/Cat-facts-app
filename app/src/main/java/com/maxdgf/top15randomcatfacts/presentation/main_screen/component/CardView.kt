@@ -7,6 +7,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+/** Creates an elevated or not elevated card.
+ *
+ * @param modifier modifier
+ * @param isElevated whether the card should be elevated
+ * @param content card's composable content */
 @Composable
 internal fun CardView(
     modifier: Modifier,

@@ -18,6 +18,12 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
+/** Creates card for displaying language name.
+ *
+ * @param name language name
+ * @param isSelected whether the card should be selected
+ * @param isElevated whether the card should be elevated
+ * @param onClick will be called when user clicks on language card */
 @Composable
 fun LanguageItem(
     name: String,

@@ -49,6 +49,7 @@ import com.maxdgf.top15randomcatfacts.presentation.main_screen.utils.ClipboardMa
 import com.maxdgf.top15randomcatfacts.presentation.main_screen.utils.ShareManager
 
 
+/** Creates main app screen. */
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
 fun MainScreen() {
