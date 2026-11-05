@@ -10,6 +10,7 @@ class ShareManager(private val context: Context) {
         // create intent for sharing
         val intent = Intent(Intent.ACTION_SEND).apply {
             putExtra(Intent.EXTRA_TEXT, message)
+            putExtra(Intent.EXTRA_TITLE, "Share this cat fact!")
             type = "text/plain"
         }
         val intentChooser = Intent.createChooser(intent, null) // create chooser from intent(for sharing)
